@@ -10,7 +10,7 @@ import {deskTool} from 'sanity/desk'
 import {apiVersion, dataset, projectId} from './sanity/env'
 import { schema } from './sanity/schema'
 import { myTheme } from './theme'
-import StudioNavbar from './src/components/StudioNavbar'
+import StudioNavbar from '@/components/StudioNavbar'
 import Logo from '@/components/Logo'
 
 export default defineConfig({

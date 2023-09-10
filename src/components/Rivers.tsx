@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { v4 } from 'uuid';
 import type { SanityDocument } from "@sanity/client";
 import Head from "next/head";
 export default function Rivers({ rivers = [] }: { rivers: SanityDocument[] }) {
@@ -15,7 +16,7 @@ export default function Rivers({ rivers = [] }: { rivers: SanityDocument[] }) {
           <Link key={river._id} href={river.slug.current} className="p-4 hover:bg-blue-50">
             <h2>{river.name}</h2>
             {river.prompts.map((p: string) => (
-               <p className="text-2xl mb-5 mt-2">{p}</p>
+               <p className="text-2xl mb-5 mt-2" key={v4()}>{p}</p>
             ))}
             {/* <Prompt p={p}/> */}
           </Link>

@@ -30,7 +30,14 @@ export default function Home({ data }: { data: SanityDocument[] }) {
         <Rivers rivers={data} />
         <div className="min-h-screen bg-neutral-800">
             {messages.length !== 0 ? (
-                <div>You've got messages.</div>
+                <div className='pb-32 pt-5 space-y-5 w-[75%] mx-auto relative text-white'>
+                    {messages.map((message)=>(
+                        <div key={message.id} className='w-full'>
+                            {message.role==="user" ? <div>{message.content}</div>:<div>{message.content}</div>}
+                        </div>
+                    ))}
+
+                </div>
             ):(
             <div className="w-full flex justify-center pt-32">
                 <h1 className="font-bold text-3xl text-white">
